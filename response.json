@@ -1,0 +1,97 @@
+{
+    "request": {
+        "flightId": {
+            "requested": "933427129",
+            "interpreted": 933427129
+        },
+        "includeFlightPlan": {
+            "requested": "false",
+            "interpreted": false
+        },
+        "maxPositions": {
+            "requested": "2",
+            "interpreted": 2
+        },
+        "maxPositionAgeMinutes": {},
+        "extendedOptions": {},
+        "url": "https://api.flightstats.com/flex/flightstatus/rest/v2/json/flight/track/933427129"
+    },
+    "appendix": {
+        "airlines": [{
+            "fs": "AS",
+            "iata": "AS",
+            "icao": "ASA",
+            "name": "Alaska Airlines",
+            "phoneNumber": "1-800-252-7522",
+            "active": true
+        }],
+        "airports": [{
+                "fs": "PDX",
+                "iata": "PDX",
+                "icao": "KPDX",
+                "faa": "PDX",
+                "name": "Portland International Airport",
+                "street1": "7000 NE Airport Way",
+                "city": "Portland",
+                "cityCode": "PDX",
+                "stateCode": "OR",
+                "postalCode": "97218",
+                "countryCode": "US",
+                "countryName": "United States",
+                "regionName": "North America",
+                "timeZoneRegionName": "America/Los_Angeles",
+                "weatherZone": "ORZ006",
+                "localTime": "2017-09-12T22:02:40.260",
+                "utcOffsetHours": -7,
+                "latitude": 45.588995,
+                "longitude": -122.592901,
+                "elevationFeet": 30,
+                "classification": 1,
+                "active": true,
+                "delayIndexUrl": "https://api.flightstats.com/flex/delayindex/rest/v1/json/airports/PDX?codeType=fs",
+                "weatherUrl": "https://api.flightstats.com/flex/weather/rest/v1/json/all/PDX?codeType=fs"
+            },
+            {
+                "fs": "HNL",
+                "iata": "HNL",
+                "icao": "PHNL",
+                "faa": "PHNL",
+                "name": "Honolulu International Airport",
+                "street1": "300 Rodgers Blvd., #12",
+                "street2": "",
+                "city": "Honolulu",
+                "cityCode": "HNL",
+                "stateCode": "HI",
+                "postalCode": "96819",
+                "countryCode": "US",
+                "countryName": "United States",
+                "regionName": "North America",
+                "timeZoneRegionName": "Pacific/Honolulu",
+                "weatherZone": "HIZ002",
+                "localTime": "2017-09-12T19:02:40.260",
+                "utcOffsetHours": -10,
+                "latitude": 21.325833,
+                "longitude": -157.921667,
+                "elevationFeet": 13,
+                "classification": 1,
+                "active": true,
+                "delayIndexUrl": "https://api.flightstats.com/flex/delayindex/rest/v1/json/airports/HNL?codeType=fs",
+                "weatherUrl": "https://api.flightstats.com/flex/weather/rest/v1/json/all/HNL?codeType=fs"
+            }
+        ]
+    },
+    "flightTrack": {
+        "flightId": 933427129,
+        "carrierFsCode": "AS",
+        "flightNumber": "833",
+        "departureAirportFsCode": "PDX",
+        "arrivalAirportFsCode": "HNL",
+        "departureDate": {
+            "dateLocal": "2017-09-14T07:05:00.000",
+            "dateUtc": "2017-09-14T14:05:00.000Z"
+        },
+        "equipment": "73J",
+        "bearing": 241.8367658602458,
+        "positions": []
+    }
+}

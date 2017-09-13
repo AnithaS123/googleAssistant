@@ -1,0 +1,281 @@
+{
+    "request": {
+        "departureAirport": {
+            "requestedCode": "PDX",
+            "fsCode": "PDX"
+        },
+        "arrivalAirport": {
+            "requestedCode": "HNL",
+            "fsCode": "HNL"
+        },
+        "date": {
+            "year": "2017",
+            "month": "9",
+            "day": "14",
+            "interpreted": "2017-09-14"
+        },
+        "hourOfDay": {
+            "requested": "0",
+            "interpreted": 0
+        },
+        "utc": {
+            "requested": "false",
+            "interpreted": false
+        },
+        "numHours": {
+            "requested": "24",
+            "interpreted": 24
+        },
+        "codeType": {},
+        "maxFlights": {
+            "requested": "5",
+            "interpreted": 5
+        },
+        "extendedOptions": {},
+        "url": "https://api.flightstats.com/flex/flightstatus/rest/v2/json/route/status/PDX/HNL/dep/2017/09/14"
+    },
+    "appendix": {
+        "airlines": [{
+                "fs": "CI",
+                "iata": "CI",
+                "icao": "CAL",
+                "name": "China Airlines",
+                "phoneNumber": "1-800-2275-118",
+                "active": true
+            },
+            {
+                "fs": "AS",
+                "iata": "AS",
+                "icao": "ASA",
+                "name": "Alaska Airlines",
+                "phoneNumber": "1-800-252-7522",
+                "active": true
+            },
+            {
+                "fs": "QF",
+                "iata": "QF",
+                "icao": "QFA",
+                "name": "Qantas",
+                "phoneNumber": "+61 2 9691 3636",
+                "active": true
+            },
+            {
+                "fs": "HA",
+                "iata": "HA",
+                "icao": "HAL",
+                "name": "Hawaiian Airlines",
+                "phoneNumber": "1-800-367-5320",
+                "active": true
+            },
+            {
+                "fs": "KE",
+                "iata": "KE",
+                "icao": "KAL",
+                "name": "Korean Air",
+                "phoneNumber": "1-800-438-5000",
+                "active": true
+            }
+        ],
+        "airports": [{
+                "fs": "PDX",
+                "iata": "PDX",
+                "icao": "KPDX",
+                "faa": "PDX",
+                "name": "Portland International Airport",
+                "street1": "7000 NE Airport Way",
+                "city": "Portland",
+                "cityCode": "PDX",
+                "stateCode": "OR",
+                "postalCode": "97218",
+                "countryCode": "US",
+                "countryName": "United States",
+                "regionName": "North America",
+                "timeZoneRegionName": "America/Los_Angeles",
+                "weatherZone": "ORZ006",
+                "localTime": "2017-09-12T22:01:34.817",
+                "utcOffsetHours": -7,
+                "latitude": 45.588995,
+                "longitude": -122.592901,
+                "elevationFeet": 30,
+                "classification": 1,
+                "active": true,
+                "delayIndexUrl": "https://api.flightstats.com/flex/delayindex/rest/v1/json/airports/PDX?codeType=fs",
+                "weatherUrl": "https://api.flightstats.com/flex/weather/rest/v1/json/all/PDX?codeType=fs"
+            },
+            {
+                "fs": "HNL",
+                "iata": "HNL",
+                "icao": "PHNL",
+                "faa": "PHNL",
+                "name": "Honolulu International Airport",
+                "street1": "300 Rodgers Blvd., #12",
+                "street2": "",
+                "city": "Honolulu",
+                "cityCode": "HNL",
+                "stateCode": "HI",
+                "postalCode": "96819",
+                "countryCode": "US",
+                "countryName": "United States",
+                "regionName": "North America",
+                "timeZoneRegionName": "Pacific/Honolulu",
+                "weatherZone": "HIZ002",
+                "localTime": "2017-09-12T19:01:34.817",
+                "utcOffsetHours": -10,
+                "latitude": 21.325833,
+                "longitude": -157.921667,
+                "elevationFeet": 13,
+                "classification": 1,
+                "active": true,
+                "delayIndexUrl": "https://api.flightstats.com/flex/delayindex/rest/v1/json/airports/HNL?codeType=fs",
+                "weatherUrl": "https://api.flightstats.com/flex/weather/rest/v1/json/all/HNL?codeType=fs"
+            }
+        ],
+        "equipments": [{
+                "iata": "73J",
+                "name": "Boeing 737-900 (winglets) Passenger/BBJ3",
+                "turboProp": false,
+                "jet": true,
+                "widebody": false,
+                "regional": false
+            },
+            {
+                "iata": "330",
+                "name": "Airbus A330",
+                "turboProp": false,
+                "jet": true,
+                "widebody": true,
+                "regional": false
+            },
+            {
+                "iata": "332",
+                "name": "Airbus A330-200",
+                "turboProp": false,
+                "jet": true,
+                "widebody": true,
+                "regional": false
+            }
+        ]
+    },
+    "flightStatuses": [{
+            "flightId": 933427129,
+            "carrierFsCode": "AS",
+            "flightNumber": "833",
+            "departureAirportFsCode": "PDX",
+            "arrivalAirportFsCode": "HNL",
+            "departureDate": {
+                "dateLocal": "2017-09-14T07:05:00.000",
+                "dateUtc": "2017-09-14T14:05:00.000Z"
+            },
+            "arrivalDate": {
+                "dateLocal": "2017-09-14T10:00:00.000",
+                "dateUtc": "2017-09-14T20:00:00.000Z"
+            },
+            "status": "S",
+            "schedule": {
+                "flightType": "J",
+                "serviceClasses": "RFY",
+                "restrictions": ""
+            },
+            "operationalTimes": {
+                "publishedDeparture": {
+                    "dateLocal": "2017-09-14T07:05:00.000",
+                    "dateUtc": "2017-09-14T14:05:00.000Z"
+                },
+                "publishedArrival": {
+                    "dateLocal": "2017-09-14T10:00:00.000",
+                    "dateUtc": "2017-09-14T20:00:00.000Z"
+                },
+                "scheduledGateDeparture": {
+                    "dateLocal": "2017-09-14T07:05:00.000",
+                    "dateUtc": "2017-09-14T14:05:00.000Z"
+                },
+                "scheduledGateArrival": {
+                    "dateLocal": "2017-09-14T10:00:00.000",
+                    "dateUtc": "2017-09-14T20:00:00.000Z"
+                }
+            },
+            "codeshares": [{
+                    "fsCode": "QF",
+                    "flightNumber": "3712",
+                    "relationship": "L"
+                },
+                {
+                    "fsCode": "KE",
+                    "flightNumber": "6250",
+                    "relationship": "L"
+                }
+            ],
+            "flightDurations": {
+                "scheduledBlockMinutes": 355
+            },
+            "airportResources": {
+                "arrivalTerminal": "M"
+            },
+            "flightEquipment": {
+                "scheduledEquipmentIataCode": "73J"
+            }
+        },
+        {
+            "flightId": 933455456,
+            "carrierFsCode": "HA",
+            "flightNumber": "25",
+            "departureAirportFsCode": "PDX",
+            "arrivalAirportFsCode": "HNL",
+            "departureDate": {
+                "dateLocal": "2017-09-14T08:00:00.000",
+                "dateUtc": "2017-09-14T15:00:00.000Z"
+            },
+            "arrivalDate": {
+                "dateLocal": "2017-09-14T11:00:00.000",
+                "dateUtc": "2017-09-14T21:00:00.000Z"
+            },
+            "status": "S",
+            "schedule": {
+                "flightType": "J",
+                "serviceClasses": "RFJY",
+                "restrictions": ""
+            },
+            "operationalTimes": {
+                "publishedDeparture": {
+                    "dateLocal": "2017-09-14T08:00:00.000",
+                    "dateUtc": "2017-09-14T15:00:00.000Z"
+                },
+                "publishedArrival": {
+                    "dateLocal": "2017-09-14T11:00:00.000",
+                    "dateUtc": "2017-09-14T21:00:00.000Z"
+                },
+                "scheduledGateDeparture": {
+                    "dateLocal": "2017-09-14T08:00:00.000",
+                    "dateUtc": "2017-09-14T15:00:00.000Z"
+                },
+                "scheduledGateArrival": {
+                    "dateLocal": "2017-09-14T11:00:00.000",
+                    "dateUtc": "2017-09-14T21:00:00.000Z"
+                }
+            },
+            "codeshares": [{
+                    "fsCode": "KE",
+                    "flightNumber": "7882",
+                    "relationship": "L"
+                },
+                {
+                    "fsCode": "CI",
+                    "flightNumber": "9205",
+                    "relationship": "L"
+                }
+            ],
+            "flightDurations": {
+                "scheduledBlockMinutes": 360
+            },
+            "airportResources": {
+                "departureGate": "D10",
+                "arrivalTerminal": "Z"
+            },
+            "flightEquipment": {
+                "scheduledEquipmentIataCode": "332",
+                "actualEquipmentIataCode": "330",
+                "tailNumber": "N389HA"
+            }
+        }
+    ]
+}
