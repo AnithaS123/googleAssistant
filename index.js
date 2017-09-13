@@ -64,6 +64,7 @@ app.post('/', function (req, res) {
 
     function provideDetailsByID(request, response) {
         var flightNumber_url = assistant.getArgument('flightNumber');
+        console.log("the flight number is " + flightNumber_url);
         console.log("the response is " + response);
         if (flightNumber_url) {
             console.log(apiId);
@@ -72,12 +73,12 @@ app.post('/', function (req, res) {
             var getDetails = {
                 method: 'GET',
                 // 933427129 flight number
-                // uri: `https://api.flightstats.com/flex/flightstatus/rest/v2/json/flight/track/933427129?appId=6aac18a6&appKey=40a7e359cb020a07ead5159c2d5d8162&includeFlightPlan=false&maxPositions=2`,
-                uri: `https://api.flightstats.com/flex/flightstatus/rest/v2/json/flight/track/${flightNumber_url}?appId=${apiId}&appKey=${apiKey}&includeFlightPlan=false&maxPositions=2`,
+                uri: `https://api.flightstats.com/flex/flightstatus/rest/v2/json/flight/track/${flightNumber_url}?appId=6aac18a6&appKey=40a7e359cb020a07ead5159c2d5d8162&includeFlightPlan=false&maxPositions=2`,
+                // uri: `https://api.flightstats.com/flex/flightstatus/rest/v2/json/flight/track/${flightNumber_url}?appId=${apiId}&appKey=${apiKey}&includeFlightPlan=false&maxPositions=2`,
                 json: true,
                 resolveWithFullResponse: true,
             };
-            console.log("get details log " + getDetails);
+            console.log("get details log " + JSON.stringify(getDetails));
             p = rp(getDetails)
                 .then(function (res) {
                     let flightId = res.body.request.flightId.requested;
