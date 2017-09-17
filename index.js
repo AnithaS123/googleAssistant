@@ -75,107 +75,116 @@ app.post('/', function (req, res) {
                     var airPortlong = res.body.appendix.airports[0].longitude;
                     var deptdate = new Date(departureDate);
                     console.log("logging flight id " + flightId);
-                    // https://maps.googleapis.com/maps/api/staticmap?center=45.588995,-122.592901&zoom=14&size=400x400&markers=color:blue%7Clabel:S%7C40.702147,-74.015794&key=AIzaSyBdMRmNmPYEkXlEjFe30tIGzAVOwxMdij4
+
+                assistant.ask(assistant.buildRichResponse()
+                    // Create a basic card and add it to the rich response
+
+                    .addSimpleResponse('Math and prime numbers it is!')
+                    .addBasicCard(assistant.buildBasicCard(`42 is an even composite number. It 
+      is composed of three distinct prime numbers multiplied together. It 
+      has a total of eight divisors. 42 is an abundant number, because the 
+      sum of its proper divisors 54 is greater than itself. To count from 
+      1 to 42 would take you about twenty-one…`)
+                        .setTitle('Math & prime numbers')
+                        .setImage('https://maps.googleapis.com/maps/api/staticmap?center=45.588995,-122.592901&zoom=14&size=400x400&markers=color:blue%7Clabel:S%7C40.702147,-74.015794&key=AIzaSyBdMRmNmPYEkXlEjFe30tIGzAVOwxMdij4', 'Image alternate text')
+                    )
+                );
 
 
-                    // assistant.ask(assistant.buildBasicCard()
-                    //     // .addSimpleResponse(`Your flight Id is ${flightId} the maximum positions is ${maxPositions} and flight number is ${fLNumber} the carrier code is  ${carrierCode} and the departure date is ${departureDate} and the airport name is ${airPortName} and the airport city name is ${airPortCity} and the country name is ${airPortCountryName} the lattitude are ${airPortlat} logitude is ${airPortlong}. Do you want to continue.`)
-                    //     // .setTitle('Flight tracked in')
-                    //     .setImage(`https: //maps.googleapis.com/maps/api/staticmap?center=${airPortLat},${airPortLong}&zoom=14&size=400x400&markers=color:blue%7Clabel:S%7C40.702147,-74.015794&key=AIzaSyBdMRmNmPYEkXlEjFe30tIGzAVOwxMdij4`, 'Map not loaded')
-                    // );
 
-                    assistant.buildBasicCard.setImage(`https://maps.googleapis.com/maps/api/staticmap?center=${airPortLat},${airPortLong}&zoom=14&size=400x400&markers=color:blue%7Clabel:S%7C40.702147,-74.015794&key=AIzaSyBdMRmNmPYEkXlEjFe30tIGzAVOwxMdij4`, 'Map not loaded');
-                });
-            return p;
+
+
+        });
+return p;
         } else {
-            assistant.ask("please tell me your Flight Id Number example 933427129 ");
-        }
+    assistant.ask("please tell me your Flight Id Number example 933427129 ");
+}
     }
-    // ---------------------------------------search by date------------------
-    function provideDetailsByDate(request, response) {
-        var AirLineCode = assistant.getArgument('AirLineCode');
-        var startDate = assistant.getArgument('startDate');
-        var flightNumber = assistant.getArgument('flightNumber');
-        console.log("date is been displayed" + startDate);
+// ---------------------------------------search by date------------------
+function provideDetailsByDate(request, response) {
+    var AirLineCode = assistant.getArgument('AirLineCode');
+    var startDate = assistant.getArgument('startDate');
+    var flightNumber = assistant.getArgument('flightNumber');
+    console.log("date is been displayed" + startDate);
 
-        var date = new Date(startDate);
+    var date = new Date(startDate);
 
-        var year = date.getFullYear();
-        var current_month = date.getMonth() + 1;
-        var month = (current_month < 10 ? "0" : "") + current_month;
-        var current_day = date.getDate();
-        var day = (current_day < 10 ? "0" : "") + current_day;
+    var year = date.getFullYear();
+    var current_month = date.getMonth() + 1;
+    var month = (current_month < 10 ? "0" : "") + current_month;
+    var current_day = date.getDate();
+    var day = (current_day < 10 ? "0" : "") + current_day;
 
-        console.log("the hours is :" + year);
-        if (flightNumber) {
-            if (AirLineCode) {
-                if (startDate) {
-                    var k = Promise.resolve();
-                    var getDetails_date = {
-                        method: 'GET',
-                        // 933427129 flight number
-                        // https://api.flightstats.com/flex/flightstatus/rest/v2/json/flight/tracks/AA/100/arr/2017/09/13?appId=6aac18a6&appKey=40a7e359cb020a07ead5159c2d5d8162&utc=false&includeFlightPlan=false&maxPositions=2
-                        // uri: `https://api.flightstats.com/flex/flightstatus/rest/v2/json/flight/track/${flightNumber_url}?appId=${apiId}&appKey=${apiKey}&includeFlightPlan=false&maxPositions=2`,
-                        uri: `https://api.flightstats.com/flex/flightstatus/rest/v2/json/flight/tracks/${AirLineCode}/${flightNumber}/arr/${year}/${month}/${day}?appId=6aac18a6&appKey=40a7e359cb020a07ead5159c2d5d8162&utc=false&includeFlightPlan=false&maxPositions=2`,
-                        json: true,
-                        resolveWithFullResponse: true,
-                    };
-                    console.log("get details log " + JSON.stringify(getDetails_date));
-                    k = rp(getDetails_date)
-                        .then(function (res) {
+    console.log("the hours is :" + year);
+    if (flightNumber) {
+        if (AirLineCode) {
+            if (startDate) {
+                var k = Promise.resolve();
+                var getDetails_date = {
+                    method: 'GET',
+                    // 933427129 flight number
+                    // https://api.flightstats.com/flex/flightstatus/rest/v2/json/flight/tracks/AA/100/arr/2017/09/13?appId=6aac18a6&appKey=40a7e359cb020a07ead5159c2d5d8162&utc=false&includeFlightPlan=false&maxPositions=2
+                    // uri: `https://api.flightstats.com/flex/flightstatus/rest/v2/json/flight/track/${flightNumber_url}?appId=${apiId}&appKey=${apiKey}&includeFlightPlan=false&maxPositions=2`,
+                    uri: `https://api.flightstats.com/flex/flightstatus/rest/v2/json/flight/tracks/${AirLineCode}/${flightNumber}/arr/${year}/${month}/${day}?appId=6aac18a6&appKey=40a7e359cb020a07ead5159c2d5d8162&utc=false&includeFlightPlan=false&maxPositions=2`,
+                    json: true,
+                    resolveWithFullResponse: true,
+                };
+                console.log("get details log " + JSON.stringify(getDetails_date));
+                k = rp(getDetails_date)
+                    .then(function (res) {
 
-                            console.log("this is res inside the function" + JSON.stringify(res))
+                        console.log("this is res inside the function" + JSON.stringify(res))
 
-                            let flightId = res.body.request.airline.requestedCode;
-                            let maxPositions = res.body.request.maxPositions.requested;
-                            console.log("logging flight id " + flightId);
-                            console.log("logging maxPositions " + maxPositions);
-                            let fLNumber = res.body.flightTracks[0].flightNumber;
-                            let carrierCode = res.body.flightTracks[0].carrierFsCode;
-                            let departureDate = res.body.flightTracks[0].departureDate.dateLocal;
-                            let airName = res.body.appendix.airlines[0].name;
+                        let flightId = res.body.request.airline.requestedCode;
+                        let maxPositions = res.body.request.maxPositions.requested;
+                        console.log("logging flight id " + flightId);
+                        console.log("logging maxPositions " + maxPositions);
+                        let fLNumber = res.body.flightTracks[0].flightNumber;
+                        let carrierCode = res.body.flightTracks[0].carrierFsCode;
+                        let departureDate = res.body.flightTracks[0].departureDate.dateLocal;
+                        let airName = res.body.appendix.airlines[0].name;
 
-                            let airPortName = res.body.appendix.airports[0].name;
-                            let airPortCity = res.body.appendix.airports[0].city;
-                            let airPortCountryName = res.body.appendix.airports[0].countryName;
-                            let airPortregionName = res.body.appendix.airports[0].regionName;
-                            let airPortlat = res.body.appendix.airports[0].latitude;
-                            let airPortlong = res.body.appendix.airports[0].longitude;
+                        let airPortName = res.body.appendix.airports[0].name;
+                        let airPortCity = res.body.appendix.airports[0].city;
+                        let airPortCountryName = res.body.appendix.airports[0].countryName;
+                        let airPortregionName = res.body.appendix.airports[0].regionName;
+                        let airPortlat = res.body.appendix.airports[0].latitude;
+                        let airPortlong = res.body.appendix.airports[0].longitude;
 
 
 
-                            FlightTrackByDatedata = `Your flight Id is ${flightId}  the maximum positions is ${maxPositions}  and flight number is ${fLNumber} the carrier code is  ${carrierCode} and the departure date is today and the airport name is ${airPortName} and the airport city name is ${airPortCity} and the country name is ${airPortCountryName} the lattitude are ${airPortlat} logitude is ${airPortlong}. Do you want to continue. `;
-                            assistant.ask(FlightTrackByDatedata);
-                            //  response.say(JSON.stringify(res));
-                            response.send();
-                        });
-                    return k;
-                } else {
-                    assistant.ask("Give me your Arrival date");
-                }
+                        FlightTrackByDatedata = `Your flight Id is ${flightId}  the maximum positions is ${maxPositions}  and flight number is ${fLNumber} the carrier code is  ${carrierCode} and the departure date is today and the airport name is ${airPortName} and the airport city name is ${airPortCity} and the country name is ${airPortCountryName} the lattitude are ${airPortlat} logitude is ${airPortlong}. Do you want to continue. `;
+                        assistant.ask(FlightTrackByDatedata);
+                        //  response.say(JSON.stringify(res));
+                        response.send();
+                    });
+                return k;
             } else {
-                assistant.ask("please give me your Air line code example AA");
+                assistant.ask("Give me your Arrival date");
             }
         } else {
-            assistant.ask("Give me your Flight Number. example 100");
+            assistant.ask("please give me your Air line code example AA");
         }
+    } else {
+        assistant.ask("Give me your Flight Number. example 100");
     }
+}
 
-    // function ThankyouSpeach(assistant) {
-    //     var TnkYou = "Welcome to FlightStat.. give me you flight number will let you know currently where the flight is";
-    //     assistant.ask(TnkYou);
-    // }
+// function ThankyouSpeach(assistant) {
+//     var TnkYou = "Welcome to FlightStat.. give me you flight number will let you know currently where the flight is";
+//     assistant.ask(TnkYou);
+// }
 
 
-    let actionMap = new Map();
-    let actionSee = actionMap.get(TrackByFlight_ID);
-    console.log("this is action" + actionSee);
+let actionMap = new Map();
+let actionSee = actionMap.get(TrackByFlight_ID);
+console.log("this is action" + actionSee);
 
-    actionMap.set(TrackByFlight_ID, provideDetailsByID);
-    actionMap.set(TrackByStarting_Date, provideDetailsByDate);
-    actionMap.set(WelcomeIntent, WelcomeSpeach);
-    // actionMap.set(quit_Intent, ThankyouSpeach);
-    assistant.handleRequest(actionMap);
+actionMap.set(TrackByFlight_ID, provideDetailsByID);
+actionMap.set(TrackByStarting_Date, provideDetailsByDate);
+actionMap.set(WelcomeIntent, WelcomeSpeach);
+// actionMap.set(quit_Intent, ThankyouSpeach);
+assistant.handleRequest(actionMap);
 });
 
 app.get('/', function (req, res) {
