@@ -78,7 +78,7 @@ app.post('/', function (req, res) {
 
                     assistant.ask(assistant.buildRichResponse()
                         .addSimpleResponse(`Your flight Id is ${flightId}  the maximum positions is ${maxPositions}  and flight number is ${fLNumber} the carrier code is  ${carrierCode} and the departure date is today and the airport name is ${airPortName} and the airport city name is ${airPortCity} and the country name is ${airPortCountryName} the lattitude are ${airPortlat} logitude is ${airPortlong}. Do you want to continue.`)
-                        .addBasicCard(assistant.buildBasicCard(`Your flight is in Porllant airport currently`)
+                        .addBasicCard(assistant.buildBasicCard(`Your flight is in ${airPortName} currently`)
                             .setTitle('Route to airport city')
                             .setImage(`https://maps.googleapis.com/maps/api/staticmap?center=${airPortLat},${airPortLong}&zoom=14&size=400x400&markers=color:blue%7Clabel:S%7C40.702147,-74.015794&key=AIzaSyBdMRmNmPYEkXlEjFe30tIGzAVOwxMdij4`, 'Image alternate text')
                         )
@@ -147,7 +147,7 @@ app.post('/', function (req, res) {
                                 // Create a basic card and add it to the rich response
 
                                 .addSimpleResponse(`Your flight Id is ${flightId}  the maximum positions is ${maxPositions}  and flight number is ${fLNumber} the carrier code is  ${carrierCode} and the departure date is today and the airport name is ${airPortName} and the airport city name is ${airPortCity} and the country name is ${airPortCountryName} the lattitude are ${airPortlat} logitude is ${airPortlong}. Do you want to continue.`)
-                                .addBasicCard(assistant.buildBasicCard(`Your flight is in PortLand airport currently`)
+                                .addBasicCard(assistant.buildBasicCard(`Your flight is in ${airPortName} currently`)
                                     .setTitle('Route to airport city')
                                     .setImage(`https://maps.googleapis.com/maps/api/staticmap?center=${airPortlat},${airPortlong}&zoom=14&size=400x400&markers=color:blue%7Clabel:S%7C40.702147,-74.015794&key=AIzaSyBdMRmNmPYEkXlEjFe30tIGzAVOwxMdij4`, 'Image alternate text')
                                 )
