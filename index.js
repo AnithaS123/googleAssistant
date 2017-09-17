@@ -79,13 +79,9 @@ app.post('/', function (req, res) {
                 assistant.ask(assistant.buildRichResponse()
                     // Create a basic card and add it to the rich response
 
-                    .addSimpleResponse('Math and prime numbers it is!')
-                    .addBasicCard(assistant.buildBasicCard(`42 is an even composite number. It 
-      is composed of three distinct prime numbers multiplied together. It 
-      has a total of eight divisors. 42 is an abundant number, because the 
-      sum of its proper divisors 54 is greater than itself. To count from 
-      1 to 42 would take you about twenty-one…`)
-                        .setTitle('Math & prime numbers')
+                    .addSimpleResponse('Your flight Id is ${flightId}  the maximum positions is ${maxPositions}  and flight number is ${fLNumber} the carrier code is  ${carrierCode} and the departure date is today and the airport name is ${airPortName} and the airport city name is ${airPortCity} and the country name is ${airPortCountryName} the lattitude are ${airPortlat} logitude is ${airPortlong}. Do you want to continue.')
+                    .addBasicCard(assistant.buildBasicCard(`Your flight is in Porllant airport currently`)
+                        .setTitle('Route to airport city')
                         .setImage('https://maps.googleapis.com/maps/api/staticmap?center=45.588995,-122.592901&zoom=14&size=400x400&markers=color:blue%7Clabel:S%7C40.702147,-74.015794&key=AIzaSyBdMRmNmPYEkXlEjFe30tIGzAVOwxMdij4', 'Image alternate text')
                     )
                 );
